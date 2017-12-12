@@ -5,11 +5,11 @@
   composer = "Spiritual"
   arranger = "Arr.: W. Kelber"
   %poet = "???"
-  subsubtitle = "v0.2beta"
+  subsubtitle = "v0.3beta"
 }
 
 szopran = \relative c' {
-  \tempo 4 = 120
+  %X\tempo 4 = 120
   \repeat volta 2 {
   g'4 g8 g ~ g g a g | r8 fis4 a8 d,2 | %Virgin Mary had a baby boy
   c'4 c8 c ~ c c c c | r8 h4 h8 g2 |
@@ -71,12 +71,10 @@ basszus = \relative c {
   d4 d8 d d4 d | } \alternative { { r4 g4 g r8 s8 | } { r4 g4 g8 \new Voice = basszusA { d8 d4 | } } } %say that his name was Jesus.
   
   \new Voice = basszusB {
-  \set melismaBusyProperties = #'()
   g,1 ~ | g2 r8 d'8 d4 | %(He came) down.
   g,1 ~ | g2 r8 d'8 d4 |
   g,1 ~ | g2 r8 d'8 d4 |
   g,1 ~ | g2 r2 |
-  \unset melismaBusyProperties
   }
   
   r4 c2. | g'4. g8 g4 g | %Oh, yes, believe us.
@@ -136,13 +134,8 @@ szovegBasszusB = \lyricmode {
       \new Lyrics = basszus \lyricsto basszusA { \szovegBasszusA }
       \context Lyrics = basszus \lyricsto basszusB { \szovegBasszusB }
    >>
-   \layout { 
-      %\context {
-      %   \Voice
-      %    \consists "Ambitus_engraver"
-      %}
-      %indent = 1.2\cm
-      %short-indent = 0.3\cm
+   \layout {
    }
    \midi { }
 }
+#(set-global-staff-size 18)
